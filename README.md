@@ -1,5 +1,7 @@
 # maryfromla
 
+personal website for maria built with vue
+
 ## Project setup
 ```
 npm install
