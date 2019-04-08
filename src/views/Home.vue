@@ -11,6 +11,7 @@
 <script>
 // @ is an alias to /src
 import InstaFeed from '@/components/InstaFeed.vue'
+import _ from 'lodash'
 
 
 export default {
@@ -20,27 +21,14 @@ export default {
   },
   methods: {
     handleScroll () {
-      let el = document.querySelector('.title').style.top = .8 * window.scrollY + 110 + 'px';
+      let el = document.querySelector('.title').style.top = .6 * window.scrollY + 110 + 'px';
     },
-    debounceScroll (func, limit) {
-      let inThrottle
-      return function() {
-        const args = arguments
-        const context = this
-        console.log('inThrottle: ', inThrottle)
-        if (!inThrottle) {
-          func.apply(context, args)
-          inThrottle = true
-          setTimeout(() => inThrottle = false, limit)
-        }
-      }
-    }
   },
   created () {
-    window.addEventListener('scroll', this.debounceScroll(this.handleScroll, 10));
+    window.addEventListener('scroll', _.throttle(this.handleScroll, 5, {leading: true, trailing: true}));
   },
   destroyed () {
-    window.removeEventListener('scroll', this.debounceScroll(this.handleScroll, 10));
+    window.removeEventListener('scroll', _.throttle(this.handleScroll, 5, {leading: true, trailing: true}));
   }
 }
 </script>
