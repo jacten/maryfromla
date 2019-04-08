@@ -27,6 +27,7 @@ export default {
       return function() {
         const args = arguments
         const context = this
+        console.log('inThrottle: ', inThrottle)
         if (!inThrottle) {
           func.apply(context, args)
           inThrottle = true

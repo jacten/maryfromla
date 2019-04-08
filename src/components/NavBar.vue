@@ -17,7 +17,8 @@ export default {
   },
   methods: {
     getRoute: function() {
-      return this.$route.path !== '/';
+      // return this.$route.path !== '/';
+      return true
     }
   }
 }
@@ -45,9 +46,8 @@ export default {
     margin: 50px;
   }
 
-  .router-link-exact-active {
-   
-    color: goldenrod;
+  .router-link-exact-active:not(.logo) {
+   text-decoration: underline;
   }
 
   a {
@@ -56,17 +56,21 @@ export default {
   transition: .1s;
   }
 
-  a:hover {
+  a:hover:not(.logo) {
     /* color: rgb(194, 167, 50); */
      text-decoration: underline;
-     text-decoration-color: rgb(118, 227, 231);
+  }
+
+  .logo:hover {
+    color: rgb(114, 114, 114);
+    transition: .5s;
   }
 
   .logo {
     position: absolute;
     left: 30px;
     top: 6px;
-    color: rgb(202, 202, 202);
+    color: rgb(209, 209, 209);
     font-size: 22px;
     font-weight: 800;
     width: 10px;
