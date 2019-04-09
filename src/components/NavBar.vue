@@ -2,9 +2,9 @@
   <div id="nav" class="container">
     <router-link v-if="getRoute()" class="logo" to="/">Mary From LA</router-link>
     <div class="navbar">
-    <router-link to="/portfolio">Portfolio</router-link>
+    <router-link to="/portfolio">portfolio</router-link>
     <router-link to="/about">About</router-link>
-    <router-link to="/contact">Contact</router-link>
+    <router-link to="/contact">contact</router-link>
     </div>
   </div>
 </template>
@@ -30,7 +30,9 @@ export default {
     position: fixed;
     z-index: 1;
     width: 100%;
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(177, 176, 176, 0.507);
+    font-family: 'Major Mono Display', monospace;
+    /* box-shadow: 0 2px 2px -2px rgba(0,0,0,.2); */
   }
   .navbar {
     height: 80px;
@@ -71,7 +73,7 @@ export default {
     position: absolute;
     left: 30px;
     top: 6px;
-    color: rgb(209, 209, 209);
+    color: rgb(190, 190, 190);
     font-size: 22px;
     font-weight: 800;
     width: 10px;

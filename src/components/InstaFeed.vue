@@ -1,9 +1,9 @@
 <template>
   <div class="instaFeed">
+    <!-- <div>insta_image</div>
     <div>insta_image</div>
     <div>insta_image</div>
-    <div>insta_image</div>
-    <div>insta_image</div>
+    <div>insta_image</div> -->
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   .instaFeed {
     min-height: 200px;
     line-height: 150px;
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     color: black;
     display: flex;
     justify-content: space-evenly;

@@ -61,7 +61,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-  background-color: rgb(240, 240, 240);
+  background-color: #FAACA8;
+  background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+  font-family: 'Roboto', sans-serif;
 }
 ol, ul {
 	list-style: none;

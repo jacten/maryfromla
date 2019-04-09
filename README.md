@@ -1,6 +1,8 @@
 # maryfromla
 
-personal website for maria built with vue
+personal website for maria built with VueJS.
+
+SMTP server built with AWS Lambda based off this blog post: (http://blog.rambabusaravanan.com/send-smtp-email-using-aws-lambda/)
 
 ## Project setup
 ```

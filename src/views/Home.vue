@@ -55,6 +55,7 @@ export default {
   }
 
   .title {
+    font-family: 'Major Mono Display', monospace;
   position: absolute;
   left: 30px;
   top: 110px;
