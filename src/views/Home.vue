@@ -21,7 +21,8 @@ export default {
   },
   methods: {
     handleScroll () {
-      let el = document.querySelector('.title').style.top = .6 * window.scrollY + 110 + 'px';
+      document.querySelector('.title').style.top = 1.2 * window.scrollY + 110 + 'px';
+      // document.querySelector('.image-container').style.maxHeight = 1.2 * window.scrollY + 800 + 'px';
     },
   },
   created () {
@@ -35,7 +36,7 @@ export default {
 
 <style scoped>
   .image-container {
-    min-height: calc(100vh);
+    max-height: 800px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -46,9 +47,11 @@ export default {
   }
 
   .image {
-    width: 100%;
+    top: -80px;
+    max-width: 100%;
+    min-height: calc(120vh + 80px);
     object-fit: cover;
-    /* margin: 0 120px; */
+    position: relative;
   }
 
   .title {
@@ -59,6 +62,16 @@ export default {
   font-size: 100px;
   font-weight: 800;
   width: 100px;
+  animation: fade-in ease 2s forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
 

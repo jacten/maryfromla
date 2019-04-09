@@ -30,6 +30,7 @@ export default {
     position: fixed;
     z-index: 1;
     width: 100%;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
   }
   .navbar {
     height: 80px;
