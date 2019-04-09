@@ -35,37 +35,41 @@
   .contact {
     min-height: 100vh;
     display: flex;
-    padding: 20px;
+    /* padding: 20px; */
     padding-top: 80px;
   }
 
   .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    /* flex-wrap: wrap; */
+    justify-content:space-between;
     height: 110vh;
     /* overflow: hidden; */
   }
 
   .image {
-    width: 45%;
+    width: 66%;
     object-fit: cover;
     object-position: top;
     position: relative;
     height: 120vh;
-    margin: 30px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 8px;
+    /* margin: 30px; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    /* border-radius: 8px; */
   }
 
   .form-container {
+    background-color: rgb(240, 240, 240);
     display: flex;
     flex-direction: column;
-    width: 45%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 40%;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    border: 3px solid rgb(255, 255, 255);
     border-radius: 8px;
-    margin: 60px 30px;
-    height: 90vh;
+    margin: 30px;
+    height: 80vh;
+    position: fixed;
+    right: 30px;
 
   }
 
@@ -77,7 +81,7 @@
   }
 
   .title {
-    font-size: 70px;
+    font-size: 50px;
     padding: 40px  90px;
     display: flex;
     justify-content: center;
