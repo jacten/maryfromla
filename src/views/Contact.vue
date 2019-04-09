@@ -5,10 +5,10 @@
       <div class="form-container">
         <h1 class="title">contact Me</h1>
         <form class="form">
-          <input v-model="smtp.name" placeholder="name"/>
-          <input v-model="smtp.email" placeholder="email"/>
-          <input v-model="smtp.subject" placeholder="subject"/>
-          <textarea v-model="smtp.message" placeholder="Message"/>
+          <input v-model="smtp.name" ref="name" placeholder="name"/>
+          <input v-model="smtp.email" ref="email" placeholder="email"/>
+          <input v-model="smtp.subject" ref="subject" placeholder="subject"/>
+          <textarea v-model="smtp.message" ref="message" placeholder="Message"/>
           <div class='button-row'>
             <button v-on:click="handleClick">{{ button }}</button>
             <span>{{ status }}</span>
@@ -39,7 +39,6 @@
     },
     methods: {
       handleClick () {
-        console.log('hi', this.validateForm())
         if (this.validateForm()) {
           this.button = '...';
           this.status = '';
@@ -56,7 +55,6 @@
             }
           axios.post('https://7vr0g56e12.execute-api.us-west-2.amazonaws.com/prod/SMTP_Mailer', data)
             .then((status) => {
-              console.log(status)
               status.status === 200 && (this.status = 'message sent')
               this.button = 'send'
               })
@@ -74,10 +72,12 @@
           if (k === 'email' && v.length && !error) {
             if(!/(.+)@(.+){2,}\.(.+){2,}/.test(v)) {
               error = `error: invalid email format`
+              this.$refs[k].focus();
             }
           }
           if (!v.length && !error) {
             error = `error: ${k} is a required field`
+            this.$refs[k].focus();
           }
         }
         this.status = error;
