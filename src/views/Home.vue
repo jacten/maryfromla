@@ -4,20 +4,25 @@
       <img class="image" alt="" src="../assets/maria_main.jpg">
       <div class="title">Mary From LA</div>
     </div>
-    <InstaFeed/>
+    <div class="links">
+      <a href="https://www.instagram.com/maryfromla/" target="_blank" rel="noopener">
+        <span></span>
+        <IconInsta/>
+        <span>@MaryFromLA</span>
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import InstaFeed from '@/components/InstaFeed.vue'
+import IconInsta from '@/components/icons/IconInsta.vue'
 import _ from 'lodash'
 
 
 export default {
   name: 'home',
   components: {
-    InstaFeed
+    IconInsta,
   },
   methods: {
     handleScroll () {
@@ -73,6 +78,33 @@ export default {
     to {
       opacity: 1;
     }
+  }
+
+  a {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* no underline */
+  }
+
+  a span {
+    transition: .4s ease-in;
+    margin: 10px;
+    width: 0;
+    overflow: hidden;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  a:hover span {
+    transition: .4s ease-out;
+    width: 170px;
+  }
+
+  .links {
+    height: 100px;
   }
 
 

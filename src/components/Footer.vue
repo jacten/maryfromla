@@ -15,12 +15,12 @@ export default {
   .footer {
     height: 150px;
     line-height: 150px;
-    background-color: rgb(7, 7, 7);
-    color: whitesmoke;
+    background-color: rgb(29, 29, 29);
+    color: #DDD6F3;
   }
 
   a {
-    color: rgb(139, 206, 226);
+    color: #DDD6F3;
   }
 
 </style>

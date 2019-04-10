@@ -1,15 +1,28 @@
 <template>
   <div class="portfolio">
+    <PhotoModal
+      v-bind:image="modalImage"
+      v-bind:open="modalOpen"
+      :update="updateModal"
+      :close="closeModal"
+      />
     <div class="columns">
     <h1 class="title">poRtfolio</h1>
-      <div class="col">
-        <img v-for="(photo, index) in photoURLs" :src="photo" :alt="index" :key="index"/>
+      <div class="col" v-on:click="handleClick">
+        <img 
+          v-for="(photo, index) in photoURLs" 
+          :src="photo" 
+          :alt="index" 
+          :key="index"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
+import PhotoModal from '@/components/PhotoModal.vue'
+
 const bucket = 'maryfromla-portfolio'
 const images = [
   '4N7A5513.jpg',
@@ -28,15 +41,39 @@ const images = [
   '4N7A5798_bw_crop.jpg',
   '4N7A5798_color.jpg',
 ]
+//modulo hack for negative looping
+function mod(n, m) {
+  return ((n % m) + m) % m;
+}
+
 export default {
   name: 'portfolio',
   data () {
     return {
       photoURLs: [],
+      modalIndex: null,
+      modalImage: null,
+      modalOpen: false,
     }
   },
   methods: {
-
+    handleClick (event) {
+      this.modalIndex = Number(event.srcElement.alt);
+      this.updateModal()
+    },
+    updateModal (increment = 0) {
+      this.modalIndex = mod(this.modalIndex + increment, images.length);
+      this.modalImage = `https://${bucket}.s3.amazonaws.com/${images[this.modalIndex]}`
+      this.modalOpen = true;
+    },
+    closeModal () {
+      this.modalIndex = null
+      this.modalImage = null
+      this.modalOpen = false
+    },
+  },
+  components: {
+    PhotoModal
   },
   mounted () {
     images.forEach((image) => {
@@ -101,10 +138,11 @@ export default {
 
   img:hover {
     transition: .3s;
-    -webkit-box-shadow: 10px 9px 13px -1px rgba(0,0,0,0.5);
+    /* -webkit-box-shadow: 10px 9px 13px -1px rgba(0,0,0,0.5);
     -moz-box-shadow:    10px 9px 13px -1px rgba(0,0,0,0.5);
-    box-shadow:         10px 9px 13px -1px rgba(0,0,0,0.5);
-    transform:scale(1.02);
+    box-shadow:         10px 9px 13px -1px rgba(0,0,0,0.5); */
+    /* transform:scale(1.02); */
+    filter: opacity(40%);
   }
 
 
