@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     handleScroll () {
-      document.querySelector('.title').style.top = 1.2 * window.scrollY + 110 + 'px';
+      document.querySelector('.title').style.top = 1.4 * window.scrollY + 110 + 'px';
       // document.querySelector('.image-container').style.maxHeight = 1.2 * window.scrollY + 800 + 'px';
     },
   },

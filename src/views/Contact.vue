@@ -161,7 +161,7 @@
     border-radius: 8px;
     margin: 30px;
     height: 80vh;
-    position: fixed;
+    position: absolute;
     right: 30px;
 
   }

@@ -2,7 +2,7 @@
   <div id="app">
     <NavBar/>
     <router-view/>
-    <Footer/>
+    <Footer v-if="getRoute()"/>
   </div>
 </template>
 
@@ -15,6 +15,11 @@ export default {
   components: {
     NavBar,
     Footer,
+  },
+  methods: {
+    getRoute () {
+      return this.$route.path !== '/';
+    },
   }
 }
 </script>

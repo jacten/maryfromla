@@ -17,8 +17,7 @@ export default {
   },
   methods: {
     getRoute: function() {
-      // return this.$route.path !== '/';
-      return true
+      return this.$route.path !== '/';
     }
   }
 }
