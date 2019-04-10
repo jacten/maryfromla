@@ -5,10 +5,30 @@
       <div class="form-container">
         <h1 class="title">contact Me</h1>
         <form class="form">
-          <input v-model="smtp.name" ref="name" placeholder="name"/>
-          <input v-model="smtp.email" ref="email" placeholder="email"/>
-          <input v-model="smtp.subject" ref="subject" placeholder="subject"/>
-          <textarea v-model="smtp.message" ref="message" placeholder="Message"/>
+          <input 
+            v-model="smtp.name" 
+            v-on:input="validateForm" 
+            ref="name" 
+            placeholder="name"
+            />
+          <input 
+            v-model="smtp.email" 
+            v-on:input="validateForm" 
+            ref="email" 
+            placeholder="email"
+            />
+          <input 
+            v-model="smtp.subject" 
+            v-on:input="validateForm" 
+            ref="subject" 
+            placeholder="subject"
+            />
+          <textarea 
+            v-model="smtp.message" 
+            v-on:input="validateForm" 
+            ref="message" 
+            placeholder="Message"
+            />
           <div class='button-row'>
             <button v-on:click="handleClick">{{ button }}</button>
             <span>{{ status }}</span>
@@ -27,6 +47,7 @@
     name: 'contact',
     data () { 
       return {
+        sendAttempted: false,
         button: 'send',
         smtp: {
           name: '',
@@ -39,7 +60,12 @@
     },
     methods: {
       handleClick () {
-        if (this.validateForm()) {
+        let self = this;
+        this.sendAttempted = true;
+        let k = this.validateForm();
+        if (k) {
+          this.$refs[k].focus();
+        } else {
           this.button = '...';
           this.status = '';
           let data = {
@@ -57,9 +83,15 @@
             .then((status) => {
               status.status === 200 && (this.status = 'message sent')
               this.button = 'send'
-              })
-            .catch(() => {
-              console.warn;
+              this.smtp = {
+                name: '',
+                email: '',
+                subject: '',
+                message: '',
+              }
+            })
+            .catch((err) => {
+              console.warn(err);
               this.status = 'error sending message'
               this.button = 'send'
             })
@@ -68,20 +100,23 @@
       validateForm () {
         let entries = Object.entries({...this.smtp});
         let error = '';
+        let key = '';
         for (const [k, v] of entries) {
           if (k === 'email' && v.length && !error) {
             if(!/(.+)@(.+){2,}\.(.+){2,}/.test(v)) {
               error = `error: invalid email format`
-              this.$refs[k].focus();
+              key = k;
             }
           }
           if (!v.length && !error) {
             error = `error: ${k} is a required field`
-            this.$refs[k].focus();
+            key = k;
           }
         }
-        this.status = error;
-        return !error.length;
+        if (this.sendAttempted) {
+          this.status = error;
+        }
+        return key;
       },
     },
   }
