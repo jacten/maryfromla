@@ -141,11 +141,12 @@
   }
 
   .image {
-    width: 66%;
+    /* width: 70%; */
+    max-width: 70vw;
     object-fit: cover;
     object-position: top;
     position: relative;
-    height: 120vh;
+    height: 150vh;
     /* margin: 30px; */
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     /* border-radius: 8px; */
@@ -163,6 +164,8 @@
     height: 80vh;
     position: absolute;
     right: 30px;
+    max-height: 600px;
+    max-width: 620px;
 
   }
 

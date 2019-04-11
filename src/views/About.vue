@@ -42,13 +42,15 @@
   }
 
   .text {
+    max-width: 400px;
+    max-height: 600px;
     background-color: rgba(245, 245, 245, 0.815);
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
     border-radius: 8px;
-    margin: 30px 60px;
+    margin: 30px auto;
     height: 80vh;
 
   }
@@ -65,6 +67,17 @@
   .message {
     margin: 0px 60px;
     line-height: 1.5;
+  }
+
+
+  /* Tablet */
+  @media only screen and (max-width : 900px) {
+
+  }
+
+  /* Desktop */
+  @media only screen and (min-width : 600px) {
+
   }
 
 </style>

@@ -112,7 +112,7 @@ export default {
     flex-direction: column;
     width: 1160px;
     margin: 30px auto;
-    height: calc(250vh + 60px);
+    height: 1730px;
     padding: 30px 40px;
     background-color: rgba(245, 245, 245, 0.795);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
@@ -123,7 +123,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 250px;
-    height: 250vh;
+    height: 1700px;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;

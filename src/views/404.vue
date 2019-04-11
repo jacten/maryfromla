@@ -1,5 +1,28 @@
 <template>
-  <div class="404">
-    <h1>404: page not found</h1>
+  <div class="body">
+    <router-link to="/"><h1>404: page not found</h1></router-link>
   </div>
 </template>
+
+<style scoped>
+  .body {
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 100px;
+  }
+
+  a {
+    text-decoration: none; /* no underline */
+    color: white;
+    transition: 1s;
+  }
+
+  a:hover {
+    color: rgb(171, 150, 238);
+    transition: 1s;
+  }
+</style>
