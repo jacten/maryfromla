@@ -25,4 +25,16 @@
     color: rgb(171, 150, 238);
     transition: 1s;
   }
+
+      /* Tablet */
+  @media only screen and (max-width : 1040px) and  (min-height: 1000px) {
+
+  }
+
+  /* Mobile */
+  @media only screen and (max-width : 600px) {
+    .body {
+      font-size: 40px;
+    }
+  }
 </style>

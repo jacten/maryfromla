@@ -18,8 +18,8 @@
 
 <style scoped>
   svg {    
-    width: 50px;
-    height: 80px;
-    fill: rgb(240, 240, 240);
+    width: 45px;
+    height: 72px;
+    fill: rgb(190, 190, 190);
   }
 </style>

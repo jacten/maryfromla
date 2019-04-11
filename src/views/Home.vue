@@ -1,4 +1,4 @@
-<template v-on:scroll.native="handleScroll">
+<template>
   <div class="home">
     <div class="image-container">
       <img class="image" alt="" src="../assets/maria_main.jpg">
@@ -8,23 +8,10 @@
 </template>
 
 <script>
-import _ from 'lodash'
 
 
 export default {
   name: 'home',
-  methods: {
-    handleScroll () {
-      document.querySelector('.title').style.top = 1.4 * window.scrollY + 110 + 'px';
-      // document.querySelector('.image-container').style.maxHeight = 1.2 * window.scrollY + 800 + 'px';
-    },
-  },
-  created () {
-    window.addEventListener('scroll', _.throttle(this.handleScroll, 5, {leading: true, trailing: true}));
-  },
-  destroyed () {
-    window.removeEventListener('scroll', _.throttle(this.handleScroll, 5, {leading: true, trailing: true}));
-  }
 }
 </script>
 
@@ -55,7 +42,7 @@ export default {
 
   .title {
   font-family: 'Major Mono Display', monospace;
-  position: absolute;
+  position: fixed;
   left: 30px;
   top: 110px;
   color: white;
@@ -83,7 +70,7 @@ export default {
  
   }
 
-  /* Desktop */
+  /* Mobile */
   @media only screen and (max-width : 600px) {
 
   }

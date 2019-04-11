@@ -135,37 +135,38 @@
   .container {
     display: flex;
     /* flex-wrap: wrap; */
-    justify-content:space-between;
+    /* justify-content:space-between; */
     height: 110vh;
     overflow: hidden;
+    width: 100vw;
   }
 
   .image {
     /* width: 70%; */
-    max-width: 70vw;
+    /* max-width: 70vw; */
     object-fit: cover;
     object-position: top;
     position: relative;
     height: 150vh;
+    max-width: 50vw;
     /* margin: 30px; */
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     /* border-radius: 8px; */
   }
 
   .form-container {
+    max-width: 50vw;
     background-color: rgba(245, 245, 245, 0.815);
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
     /* border: 3px solid rgb(255, 221, 110); */
     border-radius: 8px;
-    margin: 30px;
+    margin: 30px 60px;
     height: 80vh;
-    position: absolute;
-    right: 30px;
     max-height: 600px;
-    max-width: 620px;
+    /* max-width: 620px; */
 
   }
 
@@ -290,6 +291,41 @@
   .button-row span {
     margin: auto;
     font-family: 'Major Mono Display', monospace;
+  }
+
+    /* Tablet */
+  @media only screen and (max-width : 1040px) {
+    .image {
+      max-width: 40vw;
+    }
+    .contact, .container {
+      height: 100vh;
+    }
+
+    .form-container {
+      margin: auto;
+    }
+  }
+
+  @media only screen and (max-width : 1040px) and  (min-height: 1000px) {
+    .form-container {
+      position: relative;
+      top: -40px;
+    }
+  }
+
+
+  /* Mobile */
+  @media only screen and (max-width : 600px) {
+    .image {
+      display: none;
+    }
+    .form-container {
+      margin: auto;
+      max-width: 90vw;
+      position: relative;
+      top: -40px;
+    }
   }
 
 
