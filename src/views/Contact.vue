@@ -60,7 +60,6 @@
     },
     methods: {
       handleClick () {
-        let self = this;
         this.sendAttempted = true;
         let k = this.validateForm();
         if (k) {
@@ -90,8 +89,7 @@
                 message: '',
               }
             })
-            .catch((err) => {
-              console.warn(err);
+            .catch(() => {
               this.status = 'error sending message'
               this.button = 'send'
             })

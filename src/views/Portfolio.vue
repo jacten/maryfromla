@@ -189,6 +189,8 @@ export default {
     .col {
       flex-wrap: nowrap;
       width: 100vw;
+      height: 100%;
+      margin-bottom: -10px;
     }
 
     img {
@@ -200,7 +202,9 @@ export default {
       width: 100vw;
       padding: 0px 0px;
       margin: 30px 0px;
-      height: 7510px;
+      /* height: 7510px; */
+      height: 100%;
+      margin-bottom: -10px;
     }
 
     .title {

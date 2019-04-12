@@ -64,6 +64,7 @@
         if (this.open) {
           this.$nextTick(() => this.$refs.right.focus())
         }
+        return true;
       }
     },
     methods: {

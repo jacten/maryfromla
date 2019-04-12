@@ -144,7 +144,6 @@ export default {
       display: flex;
       flex-direction: column;
       font-size: 30px;
-      padding-top: 10px;
       background-color: rgba(240, 240, 240, 0.952);
       font-weight: 400;
       max-height: 0px;
