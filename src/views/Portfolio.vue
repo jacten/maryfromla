@@ -92,7 +92,7 @@ export default {
   .portfolio {
     padding-top: 80px;
     height: 100%;
-    width: 100%;
+    max-width: 100vw;
     margin-bottom: 80px;
   }
 
@@ -138,11 +138,79 @@ export default {
 
   img:hover {
     transition: .3s;
-    /* -webkit-box-shadow: 10px 9px 13px -1px rgba(0,0,0,0.5);
-    -moz-box-shadow:    10px 9px 13px -1px rgba(0,0,0,0.5);
-    box-shadow:         10px 9px 13px -1px rgba(0,0,0,0.5); */
-    /* transform:scale(1.02); */
     filter: opacity(40%);
+  }
+
+        /* iPad Pro */
+  @media only screen and (max-width : 1040px) {
+    .col {
+      height: 2130px;
+    }
+
+    .columns {
+      width: 890px;
+      height: 2130px;
+    }
+
+    .portfolio {
+      margin-bottom: 10px;
+    }
+  }
+
+
+        /* iPad */
+  @media only screen and (max-width : 800px) {
+    .col {
+      height: 3300px;
+    }
+
+    .columns {
+      width: 620px;
+      height: 3300px;
+    }
+  }
+
+  @media only screen and (max-width : 1040px) and  (min-height: 1000px) {
+
+  }
+
+
+  /* Mobile */
+  @media only screen and (max-width : 600px) {
+    .insta:hover span {
+      transition: .4s ease-out;
+      width: 0px;
+    }
+
+    img:hover {
+      filter: opacity(100%);
+    }
+
+    .col {
+      flex-wrap: nowrap;
+      width: 100vw;
+    }
+
+    img {
+      width: 100vw;
+      margin: 10px 0;
+    }
+
+    .columns {
+      width: 100vw;
+      padding: 0px 0px;
+      margin: 30px 0px;
+      height: 7510px;
+    }
+
+    .title {
+      font-size: 40px;
+      padding-top: 25px;
+    }
+
+    .portfolio {
+      margin-bottom: 0;
+    }
   }
 
 

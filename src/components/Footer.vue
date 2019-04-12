@@ -34,7 +34,7 @@ export default {
     background-color: #DDD6F3;
     background-image: linear-gradient(19deg, rgb(201, 188, 243) 0%, rgb(212, 140, 136) 100%);
     color: rgb(154, 134, 219);
-    z-index: 999;
+    z-index: 1;
     border-top: 1px solid white;
   }
 
@@ -48,7 +48,8 @@ export default {
     justify-content: center;
     align-items: center;
     text-decoration: none; /* no underline */
-    margin: 0 30vw;
+    margin: 0 auto;
+    width: 80vw;
   }
 
   .insta span {
@@ -70,6 +71,25 @@ export default {
     position: absolute;
     bottom: 10px;
     left: 10px;
+  }
+
+      /* Tablet */
+  @media only screen and (max-width : 1040px) {
+
+
+  }
+
+  @media only screen and (max-width : 1040px) and  (min-height: 1000px) {
+
+  }
+
+
+  /* Mobile */
+  @media only screen and (max-width : 600px) {
+    .insta:hover span {
+      transition: .4s ease-out;
+      width: 0px;
+    }
   }
 
 </style>

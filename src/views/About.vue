@@ -70,14 +70,58 @@
   }
 
 
-  /* Tablet */
-  @media only screen and (max-width : 900px) {
+    /* Tablet */
+  @media only screen and (max-width : 1040px) {
+    .images {
+      max-width: 50vw;
+    }
+    .about, .container {
+      height: 100vh;
+      max-width: 100vw;
+    }
+
+    .text {
+      max-width: 40vw;
+      max-height: 600px;
+    }
+
+    .message {
+      font-size: 14px;
+      margin: 0 40px;
+    }
 
   }
 
-  /* Desktop */
-  @media only screen and (min-width : 600px) {
+  @media only screen and (max-width : 1040px) and  (min-height: 1000px) {
+    .text {
+      margin: auto;
+      position: relative;
+      top: -40px;
+    }
+    .message {
+      font-size: 16px;
+    }
+  }
 
+
+  /* Mobile */
+  @media only screen and (max-width : 600px) {
+    .image {
+      display: none;
+    }
+    .text {
+      margin: auto;
+      max-width: 90vw;
+      position: relative;
+      top: -40px;
+    }
+  }
+
+    /* XS Mobile */
+  @media only screen and (max-height : 600px) {
+    .message {
+      font-size: 12px;
+    }
   }
 
 </style>

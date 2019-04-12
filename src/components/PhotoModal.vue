@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     class="modal" 
     v-bind:class="{ openModal: open }" 
     v-on="focus" 
@@ -174,4 +174,23 @@ button:active {
     top: 50px;
     right: 100px;
   }
+
+          /* iPad Pro */
+  @media only screen and (max-width : 1040px) {
+    .left {
+      left: 20px;
+    }
+
+    .right {
+      right: 20px;
+    }
+  }
+
+    /* Mobile */
+  @media only screen and (max-width : 600px) {
+    .modal {
+      display: none;
+    }
+  }
+
 </style>

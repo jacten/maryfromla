@@ -328,5 +328,13 @@
     }
   }
 
+      /* XS Mobile */
+  @media only screen and (max-height : 600px) {
+    .title {
+      font-size: 30px;
+      margin: 0px;
+      padding: 30px;
+    }
+  }
 
 </style>

@@ -64,6 +64,7 @@ export default {
     /* box-shadow: 0 2px 2px -2px rgba(0,0,0,.2); */
   }
   .navbar {
+    width: 100vw;
     height: 80px;
     max-height: 80px;
     background-color: rgb(240, 240, 240);
