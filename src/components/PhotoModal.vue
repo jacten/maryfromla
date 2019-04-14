@@ -2,7 +2,7 @@
   <div
     class="modal" 
     v-bind:class="{ openModal: open }" 
-    v-on="focus" 
+    v-on:change="focus" 
     v-on:keyup.esc="close" 
     v-on:keyup.arrow-right="clickRight" 
     v-on:keyup.arrow-left="clickLeft"
@@ -185,6 +185,11 @@ button:active {
     .right {
       right: 20px;
     }
+
+     .x {
+    top: 20px;
+    right: 20px;
+  }
   }
 
     /* Mobile */

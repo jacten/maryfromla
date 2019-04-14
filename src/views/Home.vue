@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="image-container">
-      <img class="image" alt="" src="../assets/maria_main.jpg">
+      <img class="image" alt="" src="../assets/maria_main3.jpg">
       <div class="title">Mary From LA</div>
     </div>
   </div>
@@ -16,6 +16,11 @@ export default {
 </script>
 
 <style scoped>
+
+  img {
+    /* -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); */
+  }
   .home {
     min-height: calc(100vh - 100px);
   }

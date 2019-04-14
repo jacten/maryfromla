@@ -4,16 +4,19 @@
       <div class="text">
         <h1 class="title">About Me</h1>
         <div class="message">
-          Growing up in Russia, I always dreamed of moving to Los Angeles. And after I first visited the first time I came up with MaryFromLA even though I'm really from Russia. 
+          Growing up in Russia, I always dreamed of moving to Los Angeles. And after I first visited the first time I came up with MaryFromLA even though I'm really <span class="from">from</span> Russia.
           <br />
           <br />
-          Growing up I was excited by American Culture. I listened to American Music and all of my devices were switched to using English. When I had a chance to go there and visit LA I decided I want to live here. That how I came up with the nick name Mary From LA. 
+          <!-- Growing up in Russia, I was excited by American Culture. I listened to American Music and all of my devices were switched to using English. When I had a chance to go there and visit LA I decided I want to live here. That how I came up with the nick name Mary From LA. 
+          <br />
+          <br /> -->
+          I am a freelance model working and living in Los Angeles. I am also a full time student on the path to becoming a registered nurse. Feel free to reach out to me with any potential modeling oppertunities or just to say hi!
         </div>
       </div>
       <div class="images">
-        <img class="image" alt="" src="../assets/maria_about_1.jpg">
-        <img class="image" alt="" src="../assets/maria_about_2.jpg">
-        <img class="image" alt="" src="../assets/maria_about_3.jpg">
+        <img class="image" alt="" src="../assets/m6.jpg">
+        <img class="image" alt="" src="../assets/m8.jpeg">
+        <img class="image" alt="" src="../assets/m7.jpeg">
       </div>
 
     </div>
@@ -21,6 +24,10 @@
 </template>
 
 <style scoped>
+  .from {
+    font-style: italic;
+  }
+
   .about {
     padding-top: 80px;
   }

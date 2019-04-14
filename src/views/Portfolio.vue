@@ -25,21 +25,27 @@ import PhotoModal from '@/components/PhotoModal.vue'
 
 const bucket = 'maryfromla-portfolio'
 const images = [
-  '4N7A5513.jpg',
-  '4N7A5540_bw.jpg',
-  '4N7A5540_color.jpg',
-  '4N7A5586_bw.jpg',
-  '4N7A5586_color.jpg',
-  '4N7A5591.jpg',
-  '4N7A5620_bw.jpg',
-  '4N7A5620_color.jpg',
-  '4N7A5632.jpg',
-  '4N7A5657.jpg',
-  '4N7A5754.jpg',
-  '4N7A5783.jpg',
-  '4N7A5798_bw.jpg',
-  '4N7A5798_bw_crop.jpg',
-  '4N7A5798_color.jpg',
+'09172015_1137.jpg',
+'09172015_1983.jpg',
+'09172015_3578.jpg',
+'4N7A5591.jpg',
+'4N7A5657.jpg',
+'4N7A5798_bw_crop.jpg',
+'DSCF2410.jpg',
+'DSCF2488.jpg',
+'DSCF2871.jpg',
+'DSCF3646.jpg',
+'DSCF3715.jpg',
+'DSCF3828.jpg',
+'DSCF8541 (1).jpg',
+'IMG_0752 (1).jpg',
+'IMG_5433 (1) (1).JPG',
+'IMG_8001- HQ.edit.jpg',
+'Maria-1.jpg',
+'Maria-Look-1-2.jpg',
+'Maria_Venice_Beach-20.jpg',
+'Maria_Venice_Beach-23.jpg',
+'Maria_Venice_Beach-25 (1).jpg',
 ]
 //modulo hack for negative looping
 function mod(n, m) {
@@ -112,7 +118,7 @@ export default {
     flex-direction: column;
     width: 1160px;
     margin: 30px auto;
-    height: 1730px;
+    height: 2300px;
     padding: 30px 40px;
     background-color: rgba(245, 245, 245, 0.795);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
@@ -123,7 +129,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 250px;
-    height: 1700px;
+    height: 2200px;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;

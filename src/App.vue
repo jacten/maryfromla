@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- coMing soon -->
     <NavBar/>
     <router-view/>
     <Footer/>
@@ -26,8 +27,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  /* color: #2c3e50; */
 }
+
 /* reset */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126

@@ -8,6 +8,8 @@ export default new Router({
   scrollBehavior() {
     return { x: 0, y: 0 };
   },
+  mode: 'history',
+  hash: false,
   routes: [
     {
       path: '/',
@@ -33,7 +35,7 @@ export default new Router({
       component: () => import('./views/Portfolio.vue')
     },
     {
-      path: '/*',
+      path: '*',
       name: '404',
       component: () => import('./views/404.vue')
     },
