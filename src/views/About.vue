@@ -4,10 +4,11 @@
       <div class="text">
         <h1 class="title">About Me</h1>
         <div class="message">
-          Growing up in Russia, I always dreamed of moving to Los Angeles. And after I first visited the first time I came up with MaryFromLA even though I'm really <span class="from">from</span> Russia.
+          Growing up in Russia, I always loved American culture. I listened to only American music and all my devices were switched to using English. When I had a chance to visit LA I decided I never wanted to leave. So that is how I came up with the name MaryFromLA.
+           <!-- even though I'm really <span class="from">from</span> Russia. -->
           <br />
           <br />
-          <!-- Growing up in Russia, I was excited by American Culture. I listened to American Music and all of my devices were switched to using English. When I had a chance to go there and visit LA I decided I want to live here. That how I came up with the nick name Mary From LA. 
+          <!-- Growing up in Russia, I was excited by American Culture. I listened to American Music and all of my devices were switched to using English.  That how I came up with the nick name Mary From LA. 
           <br />
           <br /> -->
           I am a freelance model working and living in Los Angeles. I am also a full time student on the path to becoming a registered nurse. Feel free to reach out to me with any potential modeling oppertunities or just to say hi!
@@ -74,7 +75,7 @@
   }
 
   .message {
-    margin: 0px 60px;
+    margin: 0px 30px;
     line-height: 1.5;
   }
 
@@ -111,7 +112,7 @@
 
     .message {
       font-size: 14px;
-      margin: 0 40px;
+      margin: 0 20px;
     }
 
   }
@@ -138,6 +139,9 @@
       max-width: 90vw;
       position: relative;
       top: -40px;
+    }
+    .message{
+      margin: 0 40px;
     }
   }
 

@@ -1,7 +1,9 @@
 <template>
   <div class="contact">
     <div class="container">
+      <div class='image-holder'>
       <img class="image" alt="" src="../assets/maria_contact1.jpg">
+      </div>
       <div class="form-container">
         <h1 class="title">contact Me</h1>
         <form class="form">
@@ -122,8 +124,14 @@
 
 
 <style scoped>
+
+  .image-holder {
+    width: 50vw;
+  }
+
   .contact {
     min-height: 100vh;
+    width: 100vw;
     display: flex;
     /* padding: 20px; */
     padding-top: 80px;
@@ -133,7 +141,7 @@
   .container {
     display: flex;
     /* flex-wrap: wrap; */
-    /* justify-content:space-between; */
+    justify-content:space-between;
     height: 110vh;
     overflow: hidden;
     width: 100vw;
@@ -144,9 +152,8 @@
     /* max-width: 70vw; */
     object-fit: cover;
     object-position: top;
-    position: relative;
     height: 150vh;
-    max-width: 50vw;
+    width: 50vw;
     /* margin: 30px; */
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     /* border-radius: 8px; */
@@ -294,6 +301,10 @@
     /* Tablet */
   @media only screen and (max-width : 1040px) {
     .image {
+      max-width: 40vw;
+    }
+
+    .image-holder {
       max-width: 40vw;
     }
     .contact, .container {

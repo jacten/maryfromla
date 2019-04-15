@@ -5,6 +5,7 @@
       v-bind:open="modalOpen"
       :update="updateModal"
       :close="closeModal"
+      v-if="notMobile"
       />
     <div class="columns">
     <h1 class="title">poRtfolio</h1>
@@ -60,12 +61,15 @@ export default {
       modalIndex: null,
       modalImage: null,
       modalOpen: false,
+      notMobile: false,
     }
   },
   methods: {
     handleClick (event) {
-      this.modalIndex = Number(event.srcElement.alt);
-      this.updateModal()
+      if (this.notMobile) {
+        this.modalIndex = Number(event.srcElement.alt);
+        this.updateModal()
+      }
     },
     updateModal (increment = 0) {
       this.modalIndex = mod(this.modalIndex + increment, images.length);
@@ -77,11 +81,23 @@ export default {
       this.modalImage = null
       this.modalOpen = false
     },
+    handleResize () {
+      var width = window.innerWidth
+      || document.documentElement.clientWidth
+      || document.body.clientWidth;
+      if (width > 600) {
+        this.notMobile = true;
+      } else {
+        this.notMobile = false;
+      }
+    }
   },
   components: {
     PhotoModal
   },
   mounted () {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize)
     images.forEach((image) => {
       this.photoURLs.push(
         `https://${bucket}.s3.amazonaws.com/${image}`
@@ -89,7 +105,7 @@ export default {
     })
   },
   destroyed () {
-
+    window.removeEventListener('resize', this.handleResize)
   }
 }
 </script>
