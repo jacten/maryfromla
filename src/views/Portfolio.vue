@@ -14,28 +14,28 @@
           <img 
             v-for="(photo, index) in column1" 
             v-lazy="photo" 
-            :alt="index" 
+            :alt="photo" 
             :key="index"/>
         </div>
         <div class="column">
           <img 
             v-for="(photo, index) in column2" 
             v-lazy="photo" 
-            :alt="index" 
+            :alt="photo" 
             :key="index"/>
         </div>
         <div class="column">
           <img 
             v-for="(photo, index) in column3" 
             v-lazy="photo" 
-            :alt="index" 
+            :alt="photo" 
             :key="index"/>
         </div>
         <div class="column">
           <img 
             v-for="(photo, index) in column4" 
             v-lazy="photo" 
-            :alt="index" 
+            :alt="photo" 
             :key="index"/>
         </div>
       </div>
@@ -67,13 +67,13 @@ export default {
         'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2410.jpg',
         'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2488.jpg',
         'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2871.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3828.jpg',
         'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3715.jpg',
         'https://maryfromla-portfolio.s3.amazonaws.com/IMG_0752 (1).jpg',
       ],
       column3: [
         'https://maryfromla-portfolio.s3.amazonaws.com/IMG_5433 (1) (1).JPG',
         'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3646.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3828.jpg',
         'https://maryfromla-portfolio.s3.amazonaws.com/DSCF8541 (1).jpg',
         'https://maryfromla-portfolio.s3.amazonaws.com/4N7A5657.jpg',
         'https://maryfromla-portfolio.s3.amazonaws.com/IMG_8001- HQ.edit.jpg',
@@ -95,9 +95,11 @@ export default {
   methods: {
     handleClick (event) {
       if (this.notMobile) {
-        let src = event.srcElement.src
-        this.modalIndex = this.modalURLs.indexOf(src)
-        this.updateModal(0, src)
+        let src = event.srcElement.alt;
+        if (src !== undefined) {
+          this.modalIndex = this.modalURLs.indexOf(src)
+          this.updateModal(0, src)
+        }
       }
     },
     updateModal (increment, src) {
@@ -128,7 +130,6 @@ export default {
     this.handleResize();
     this.modalURLs = [...this.column1, ...this.column2, ...this.column3, ...this.column4];
     window.addEventListener('resize', this.handleResize)
-    console.log(this.modalURLs)
   },
   destroyed () {
     window.removeEventListener('resize', this.handleResize)
@@ -173,6 +174,7 @@ export default {
   .columns {
     display: flex;
     flex-direction: column;
+    height: 100%;
     margin: 30px 30px;
     padding: 30px 40px 50px;
     background-color: rgba(245, 245, 245, 0.795);
