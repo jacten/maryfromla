@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
     <div class="container">
-      <img class="image" alt="" src="../assets/maria_contact2.jpg">
+      <img class="image" alt="" src="../assets/maria_contact1.jpg">
       <div class="form-container">
         <h1 class="title">contact Me</h1>
         <form class="form">

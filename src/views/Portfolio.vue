@@ -148,14 +148,14 @@ export default {
   }
 
         /* iPad Pro */
-  @media only screen and (max-width : 1040px) {
+  @media only screen and (max-width : 1150px) {
     .col {
-      height: 2130px;
+      height: 2830px;
     }
 
     .columns {
       width: 890px;
-      height: 2130px;
+      height: 2850px;
     }
 
     .portfolio {
@@ -167,19 +167,14 @@ export default {
         /* iPad */
   @media only screen and (max-width : 800px) {
     .col {
-      height: 3300px;
+      height: 4000px;
     }
 
     .columns {
       width: 620px;
-      height: 3300px;
+      height: 4040px;
     }
   }
-
-  @media only screen and (max-width : 1040px) and  (min-height: 1000px) {
-
-  }
-
 
   /* Mobile */
   @media only screen and (max-width : 600px) {

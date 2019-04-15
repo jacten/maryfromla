@@ -14,9 +14,9 @@
         </div>
       </div>
       <div class="images">
-        <img class="image" alt="" src="../assets/m6.jpg">
-        <img class="image" alt="" src="../assets/m8.jpeg">
-        <img class="image" alt="" src="../assets/m7.jpeg">
+        <img class="image third" alt="" src="../assets/a6.jpeg">
+        <img class="image wall" alt="" src="../assets/m7.jpeg">
+        <img class="image cat" alt="" src="../assets/q3.jpeg">
       </div>
 
     </div>
@@ -39,6 +39,8 @@
 
   .images {
     display: flex;
+
+    overflow:hidden;
     /* margin-right: 100px; */
   }
 
@@ -74,6 +76,21 @@
   .message {
     margin: 0px 60px;
     line-height: 1.5;
+  }
+
+  .cat {
+    object-position: 50% -100px;
+    height: 120%;
+  }
+
+  .wall {
+    object-position: 55% 50%;
+    height: 120%;
+  }
+
+
+  .third {
+    object-position: 50% 50%;
   }
 
 
