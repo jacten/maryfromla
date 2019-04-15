@@ -135,6 +135,7 @@ export default {
     width: 1160px;
     margin: 30px auto;
     height: 2300px;
+    height: calc( 100% / 4 );
     padding: 30px 40px;
     background-color: rgba(245, 245, 245, 0.795);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
@@ -171,7 +172,7 @@ export default {
 
     .columns {
       width: 890px;
-      height: 2850px;
+      height: 2900px;
     }
 
     .portfolio {
@@ -188,7 +189,7 @@ export default {
 
     .columns {
       width: 620px;
-      height: 4040px;
+      height: 4100px;
     }
   }
 
