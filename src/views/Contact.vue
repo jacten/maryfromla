@@ -2,7 +2,7 @@
   <div class="contact">
     <div class="container">
       <div class='image-holder'>
-      <img class="image" alt="" src="../assets/maria_contact1.jpg">
+        <img class="image" alt="" src="../assets/maria_contact1.jpg">
       </div>
       <div class="form-container">
         <h1 class="title">contact Me</h1>
@@ -326,7 +326,7 @@
 
   /* Mobile */
   @media only screen and (max-width : 600px) {
-    .image {
+    .image-holder {
       display: none;
     }
     .form-container {
