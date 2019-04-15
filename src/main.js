@@ -7,7 +7,6 @@ Vue.config.productionTip = false
 
 Vue.use(VueLazyload, {
   preLoad: 2,
-  observer: true,
 })
 
 new Vue({
