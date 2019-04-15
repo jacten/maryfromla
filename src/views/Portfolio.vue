@@ -9,12 +9,35 @@
       />
     <div class="columns">
     <h1 class="title">poRtfolio</h1>
-      <div class="col" v-on:click="handleClick">
-        <img 
-          v-for="(photo, index) in photoURLs" 
-          :src="photo" 
-          :alt="index" 
-          :key="index"/>
+      <div class="row" v-on:click="handleClick">
+        <div class="column">
+          <img 
+            v-for="(photo, index) in column1" 
+            v-lazy="photo" 
+            :alt="index" 
+            :key="index"/>
+        </div>
+        <div class="column">
+          <img 
+            v-for="(photo, index) in column2" 
+            v-lazy="photo" 
+            :alt="index" 
+            :key="index"/>
+        </div>
+        <div class="column">
+          <img 
+            v-for="(photo, index) in column3" 
+            v-lazy="photo" 
+            :alt="index" 
+            :key="index"/>
+        </div>
+        <div class="column">
+          <img 
+            v-for="(photo, index) in column4" 
+            v-lazy="photo" 
+            :alt="index" 
+            :key="index"/>
+        </div>
       </div>
     </div>
   </div>
@@ -24,31 +47,7 @@
 
 import PhotoModal from '@/components/PhotoModal.vue'
 
-const bucket = 'maryfromla-portfolio'
-const images = [
-'09172015_1137.jpg',
-'09172015_1983.jpg',
-'09172015_3578.jpg',
-'4N7A5591.jpg',
-'4N7A5657.jpg',
-'4N7A5798_bw_crop.jpg',
-'DSCF2410.jpg',
-'DSCF2488.jpg',
-'DSCF2871.jpg',
-'DSCF3646.jpg',
-'DSCF3715.jpg',
-'DSCF3828.jpg',
-'DSCF8541 (1).jpg',
-'IMG_0752 (1).jpg',
-'IMG_5433 (1) (1).JPG',
-'IMG_8001- HQ.edit.jpg',
-'Maria-1.jpg',
-'Maria-Look-1-2.jpg',
-'Maria_Venice_Beach-20.jpg',
-'Maria_Venice_Beach-23.jpg',
-'Maria_Venice_Beach-25 (1).jpg',
-]
-//modulo hack for negative looping
+//modulo hack for negative looping  
 function mod(n, m) {
   return ((n % m) + m) % m;
 }
@@ -57,7 +56,36 @@ export default {
   name: 'portfolio',
   data () {
     return {
-      photoURLs: [],
+      column1: [
+        'https://maryfromla-portfolio.s3.amazonaws.com/09172015_1137.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/09172015_1983.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/09172015_3578.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/4N7A5591.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/4N7A5657.jpg',
+      ],
+      column2: [
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2410.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2488.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2871.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3646.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3715.jpg',
+      ],
+      column3: [
+        'https://maryfromla-portfolio.s3.amazonaws.com/IMG_0752 (1).jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF8541 (1).jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/IMG_5433 (1) (1).JPG',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3828.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/IMG_8001- HQ.edit.jpg',
+      ],
+      column4: [
+        'https://maryfromla-portfolio.s3.amazonaws.com/4N7A5798_bw_crop.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/Maria-Look-1-2.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/Maria_Venice_Beach-20.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/Maria_Venice_Beach-23.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/Maria-1.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/Maria_Venice_Beach-25 (1).jpg',
+      ],
+      modalURLs: [],
       modalIndex: null,
       modalImage: null,
       modalOpen: false,
@@ -67,13 +95,14 @@ export default {
   methods: {
     handleClick (event) {
       if (this.notMobile) {
-        this.modalIndex = Number(event.srcElement.alt);
-        this.updateModal()
+        let src = event.srcElement.src
+        this.modalIndex = this.modalURLs.indexOf(src)
+        this.updateModal(0, src)
       }
     },
-    updateModal (increment = 0) {
-      this.modalIndex = mod(this.modalIndex + increment, images.length);
-      this.modalImage = `https://${bucket}.s3.amazonaws.com/${images[this.modalIndex]}`
+    updateModal (increment, src) {
+      this.modalIndex = mod(this.modalIndex + increment, this.modalURLs.length);
+      this.modalImage = src || this.modalURLs[this.modalIndex]
       this.modalOpen = true;
     },
     closeModal () {
@@ -97,12 +126,9 @@ export default {
   },
   mounted () {
     this.handleResize();
+    this.modalURLs = [...this.column1, ...this.column2, ...this.column3, ...this.column4];
     window.addEventListener('resize', this.handleResize)
-    images.forEach((image) => {
-      this.photoURLs.push(
-        `https://${bucket}.s3.amazonaws.com/${image}`
-      )
-    })
+    console.log(this.modalURLs)
   },
   destroyed () {
     window.removeEventListener('resize', this.handleResize)
@@ -111,6 +137,22 @@ export default {
 </script>
 
 <style scoped>
+
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 5px;
+  }
+
+  .column {
+    -ms-flex: 25%;
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 5px;
+  }
+
   .portfolio {
     padding-top: 80px;
     height: 100%;
@@ -120,7 +162,6 @@ export default {
 
   .title {
     font-size: 50px;
-    /* padding: 30px  90px; */
     padding-bottom: 25px;
     display: flex;
     justify-content: center;
@@ -132,30 +173,17 @@ export default {
   .columns {
     display: flex;
     flex-direction: column;
-    width: 1160px;
-    margin: 30px auto;
-    height: 2300px;
-    height: calc( 100% / 4 );
-    padding: 30px 40px;
+    margin: 30px 30px;
+    padding: 30px 40px 50px;
     background-color: rgba(245, 245, 245, 0.795);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     border-radius: 8px;
   }
 
-  .col {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    height: 2200px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
   img {
-    width: 250px;
-    object-fit:contain;
-    margin: 10px;
+    width: 100%;
+    margin-top: 10px;
+    vertical-align: middle;
     transition: .3s;
   }
 
@@ -164,37 +192,24 @@ export default {
     filter: opacity(40%);
   }
 
-        /* iPad Pro */
-  @media only screen and (max-width : 1150px) {
-    .col {
-      height: 2830px;
-    }
-
-    .columns {
-      width: 890px;
-      height: 2900px;
-    }
-
-    .portfolio {
-      margin-bottom: 10px;
-    }
-  }
 
 
         /* iPad */
   @media only screen and (max-width : 800px) {
-    .col {
-      height: 4000px;
-    }
-
-    .columns {
-      width: 620px;
-      height: 4100px;
+    .column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
     }
   }
 
   /* Mobile */
   @media only screen and (max-width : 600px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
     .insta:hover span {
       transition: .4s ease-out;
       width: 0px;
@@ -204,26 +219,21 @@ export default {
       filter: opacity(100%);
     }
 
-    .col {
-      flex-wrap: nowrap;
-      width: 100vw;
-      height: 100%;
-      margin-bottom: -10px;
-    }
-
     img {
-      width: 100vw;
       margin: 10px 0;
     }
 
     .columns {
       width: 100vw;
-      padding: 0px 0px;
+      padding: 0 0 10px 0;
       margin: 30px 0px;
-      /* height: 7510px; */
       height: 100%;
-      margin-bottom: -10px;
     }
+
+    .row, .column {
+      padding: 0;
+    }
+
 
     .title {
       font-size: 40px;
