@@ -1,8 +1,16 @@
 <template>
   <div class="home">
     <div class="image-container">
-      <img class="image" alt="" src="../assets/maria_main4.jpg">
-      <div class="title">Mary From LA</div>
+      <img 
+        class="image" 
+        alt="" 
+        src="../assets/maria_main4.jpg"
+        v-on:load="handleLoad">
+      <div 
+        v-bind:class="{ loaded: loaded }"  
+        class="title"
+        >Mary From LA
+      </div>
     </div>
   </div>
 </template>
@@ -12,6 +20,16 @@
 
 export default {
   name: 'home',
+  methods: {
+    handleLoad () {
+      this.loaded = true;
+    },
+  },
+  data: function () {
+    return {
+      loaded: false,
+    }
+  }
 }
 </script>
 
@@ -50,7 +68,12 @@ export default {
   font-size: 100px;
   font-weight: 800;
   width: 100px;
-  animation: fade-in ease 2s forwards;
+  opacity: 0;
+  }
+
+  .loaded{
+    animation: fade-in ease 3s forwards;
+    animation-delay: .3s;
   }
 
   @keyframes fade-in {

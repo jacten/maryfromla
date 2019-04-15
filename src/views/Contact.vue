@@ -30,7 +30,7 @@
             placeholder="Message"
             />
           <div class='button-row'>
-            <button v-on:click="handleClick">{{ button }}</button>
+            <button v-on:click.prevent="handleClick">{{ button }}</button>
             <span>{{ status }}</span>
           </div>
         </form>
