@@ -5,8 +5,15 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+
+var width = window.innerWidth
+      || document.documentElement.clientWidth
+      || document.body.clientWidth;
+
+let loadAmount = width > 600 ? 1.3 : 2;
+
 Vue.use(VueLazyload, {
-  preLoad: 2,
+  preLoad: loadAmount,
 })
 
 new Vue({
