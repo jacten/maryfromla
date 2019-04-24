@@ -7,8 +7,8 @@ Vue.config.productionTip = false
 
 
 var width = window.innerWidth
-      || document.documentElement.clientWidth
-      || document.body.clientWidth;
+  || document.documentElement.clientWidth
+  || document.body.clientWidth;
 
 let loadAmount = width > 600 ? 1.3 : 2;
 

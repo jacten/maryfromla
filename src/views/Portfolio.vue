@@ -57,33 +57,33 @@ export default {
   data () {
     return {
       column1: [
-        'https://maryfromla-portfolio.s3.amazonaws.com/09172015_1137.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/09172015_1983.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/09172015_3578.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/4N7A5591.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/Maria_Venice_Beach-20.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/09172015_1137_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/09172015_1983_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/09172015_3578_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/4N7A5591_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/Maria_Venice_Beach-20_sm.jpg',
       ],
       column2: [
-        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2410.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2488.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2871.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3715.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/IMG_0752 (1).jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2410_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2488_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF2871_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3715_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/IMG_0752 (1)_sm.jpg',
       ],
       column3: [
-        'https://maryfromla-portfolio.s3.amazonaws.com/IMG_5433 (1) (1).JPG',
-        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3646.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3828.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF8541 (1).jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/4N7A5657.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/IMG_8001- HQ.edit.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/IMG_5433 (1) (1)_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3646_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF3828_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/DSCF8541 (1)_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/4N7A5657_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/IMG_8001- HQ.edit_sm.jpg',
       ],
       column4: [
-        'https://maryfromla-portfolio.s3.amazonaws.com/4N7A5798_bw_crop.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/Maria-Look-1-2.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/Maria_Venice_Beach-23.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/Maria-1.jpg',
-        'https://maryfromla-portfolio.s3.amazonaws.com/Maria_Venice_Beach-25 (1).jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/4N7A5798_bw_crop_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/Maria-Look-1-2_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/Maria_Venice_Beach-23_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/Maria-1_sm.jpg',
+        'https://maryfromla-portfolio.s3.amazonaws.com/Maria_Venice_Beach-25 (1)_sm.jpg',
       ],
       modalURLs: [],
       modalIndex: null,
@@ -104,7 +104,8 @@ export default {
     },
     updateModal (increment, src) {
       this.modalIndex = mod(this.modalIndex + increment, this.modalURLs.length);
-      this.modalImage = src || this.modalURLs[this.modalIndex]
+      let image = src || this.modalURLs[this.modalIndex]
+      this.modalImage = image.slice(0, -7) + '.jpg'
       this.modalOpen = true;
     },
     closeModal () {
